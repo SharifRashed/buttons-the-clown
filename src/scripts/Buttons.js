@@ -5,7 +5,7 @@ import { Requests } from "./Requests.js"
 
 export const Buttons = () => {
     return `
-        <h1>Button's the Clown Strikes Again!</h1>
+        <h1>Buttons the Clown Strikes Again!</h1>
         <section class="reservationForm">
             ${ReservationForm()}
         </section>
