@@ -1,28 +1,17 @@
-import { sendReservation } from "./dataAccess.js"
+// also acts as a main in sense but only stores the html to render the website
 
-export const ReservationForm = () => {
-    let html = `
-    <div class="field">
-    <label class="label" for="serviceDescription">Description</label>
-    <input type="text" name="serviceDescription" class="input" />
-    </div>
-    <div class="field">
-    <label class="label" for="serviceAddress">Address</label>
-    <input type="text" name="serviceAddress" class="input" />
-    </div>
-    <div class="field">
-    <label class="label" for="serviceBudget">Budget</label>
-    <input type="number" name="serviceBudget" class="input" />
-    </div>
-    <div class="field">
-    <label class="label" for="serviceDate">Date needed</label>
-    <input type="date" name="serviceDate" class="input" />
-    </div>
-    
-    <div class="requestButton">
-    <button class="button" id="submitRequest">Submit Request</button>
-    </div>
+import { ReservationForm } from "./ReservationForm.js"
+import { Requests } from "./Requests.js"
+
+export const Buttons = () => {
+    return `
+        <h1>Button's the Clown Strikes Again!</h1>
+        <section class="reservationForm">
+            ${ReservationForm()}
+        </section>
+        <section class="reservationRequests">
+            <h2>Reservation Requests</h2>
+            ${Requests()}
+        </section>
     `
-
-    return html
 }

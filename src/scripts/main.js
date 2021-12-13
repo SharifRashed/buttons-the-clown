@@ -1,10 +1,12 @@
+//this module is responsible for retrieving all the data from other modules and organizing it to display the actual website
+
 import { Buttons } from "./Buttons.js"
-import { fetchReservations } from "./dataAccess.js"
+import { fetchRequests } from "./dataAccess.js"
 
 const mainContainer = document.querySelector("#container")
 
 const render = () => {
-    fetchReservations().then(
+    fetchRequests().then(
         () => {
             mainContainer.innerHTML = Buttons()
         }
@@ -12,3 +14,10 @@ const render = () => {
 }
 
 render()
+
+mainContainer.addEventListener(
+    "stateChanged",
+    customEvent => {
+        render()
+    }
+)
