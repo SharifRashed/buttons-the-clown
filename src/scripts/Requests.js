@@ -5,7 +5,7 @@ import { deleteRequest } from "./dataAccess.js"
 const mainContainer = document.querySelector("#container")
 
 mainContainer.addEventListener("click", click => {
-    if (click.target.id.startsWith("request--")) {
+    if (click.target.id.startsWith("reservation--")) {
         const [, requestId] = click.target.id.split("--")
         deleteRequest(parseInt(requestId))
     }
